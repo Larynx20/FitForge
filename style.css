@@ -1,0 +1,793 @@
+
+/* ==============================
+   1. BASIC RESET
+   ============================== */
+
+/* Selects every element on the page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Makes clicking navigation links scroll smoothly */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Basic styling for the whole page */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #f5f7fa;
+}
+
+
+/* ==============================
+   2. NAVIGATION BAR
+   ============================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 8%;
+
+  background-color: #111827;
+}
+
+/* FitForge logo */
+.logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #22c55e;
+}
+
+/* Navigation list */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+/* Navigation links */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Navigation hover effect */
+.nav-links a:hover {
+  color: #22c55e;
+}
+
+/* Join Now button */
+.nav-btn {
+  padding: 10px 20px;
+
+  background-color: #22c55e;
+  color: white;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  border-radius: 6px;
+
+  transition: background-color 0.3s ease;
+}
+
+/* Join Now hover */
+.nav-btn:hover {
+  background-color: #16a34a;
+}
+
+
+/* ==============================
+   3. HERO SECTION
+   ============================== */
+
+.hero {
+  min-height: 85vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 80px 8%;
+
+  /* Dark overlay + background image */
+  background:
+    linear-gradient(
+      rgba(17, 24, 39, 0.75),
+      rgba(17, 24, 39, 0.75)
+    ),
+    url("images/Mb.jpg") center/cover no-repeat;
+}
+
+/* Hero text */
+.hero-content {
+  max-width: 700px;
+  color: white;
+}
+
+/* Main hero heading */
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+/* Hero paragraph */
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+/* General CTA button */
+.cta-btn {
+  display: inline-block;
+
+  padding: 13px 25px;
+
+  background-color: #22c55e;
+  color: white;
+
+  text-decoration: none;
+  font-weight: bold;
+
+  border-radius: 6px;
+
+  transition: background-color 0.3s ease,
+              transform 0.3s ease;
+}
+
+/* CTA hover */
+.cta-btn:hover {
+  background-color: #16a34a;
+  transform: translateY(-2px);
+}
+
+
+/* ==============================
+   4. GENERAL SECTION STYLING
+   ============================== */
+
+.features,
+.programs,
+.about,
+.pricing,
+.testimonials {
+  padding: 80px 8%;
+}
+
+/* Section headings */
+.features h2,
+.programs h2,
+.about h2,
+.pricing h2,
+.testimonials h2 {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 15px;
+}
+
+/* Text underneath headings */
+.section-text {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 45px;
+  color: #6b7280;
+}
+
+
+/* ==============================
+   5. WORKOUT FEATURES
+   ============================== */
+
+.feature-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* General card */
+.card {
+  background-color: white;
+  padding: 30px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Card hover */
+.card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Emoji/icon */
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+/* Card heading */
+.card h3 {
+  margin-bottom: 10px;
+}
+
+/* Card paragraph */
+.card p {
+  color: #6b7280;
+}
+
+
+/* ==============================
+   6. WORKOUT PROGRAMS
+   ============================== */
+
+.program-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Individual program card */
+.program-card {
+  background-color: white;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Program card hover */
+.program-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Image container */
+.program-image {
+  width: 100%;
+  height: 230px;
+
+  overflow: hidden;
+}
+
+/* Actual images */
+.program-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.4s ease;
+}
+
+/* Image zoom effect */
+.program-card:hover .program-image img {
+  transform: scale(1.05);
+}
+
+/* Content underneath image */
+.program-content {
+  padding: 25px;
+}
+
+/* Beginner/intermediate label */
+.program-level {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #16a34a;
+}
+
+/* Program title */
+.program-content h3 {
+  margin: 8px 0 10px;
+  font-size: 1.4rem;
+}
+
+/* Program description */
+.program-content p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* Days and time */
+.program-info {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* View Program button */
+.program-btn {
+  display: inline-block;
+
+  padding: 10px 18px;
+
+  background-color: #111827;
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  transition: background-color 0.3s ease;
+}
+
+/* View Program hover */
+.program-btn:hover {
+  background-color: #22c55e;
+}
+
+
+/* ==============================
+   7. ABOUT SECTION
+   ============================== */
+
+.about {
+  background-color: #111827;
+  color: white;
+}
+
+/* Two-column layout */
+.about-content {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+
+  align-items: center;
+}
+
+/* About heading */
+.about-text h2 {
+  text-align: left;
+  font-size: 2.5rem;
+  margin: 10px 0 20px;
+}
+
+/* About paragraphs */
+.about-text p {
+  color: #d1d5db;
+  margin-bottom: 18px;
+}
+
+/* Small heading */
+.small-heading {
+  color: #22c55e;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Statistics box */
+.about-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Individual statistics */
+.about-box div {
+  padding: 30px;
+
+  background-color: #1f2937;
+
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+/* Large numbers */
+.about-box strong {
+  display: block;
+
+  font-size: 2rem;
+  color: #22c55e;
+}
+
+/* Statistics labels */
+.about-box span {
+  color: #d1d5db;
+}
+
+
+/* ==============================
+   8. PRICING
+   ============================== */
+
+.pricing {
+  background-color: #f5f7fa;
+}
+
+.pricing-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Pricing card */
+.price-card {
+  position: relative;
+  text-align: center;
+}
+
+/* Price */
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+
+  color: #22c55e;
+
+  margin: 15px 0 25px;
+}
+
+/* /mo */
+.price span {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Pricing list */
+.price-list {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+/* Individual list item */
+.price-list li {
+  padding: 8px 0;
+  color: #4b5563;
+}
+
+/* Most popular pricing card */
+.featured {
+  border: 3px solid #22c55e;
+}
+
+/* Most popular label */
+.popular {
+  position: absolute;
+
+  top: -14px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  padding: 6px 15px;
+
+  background-color: #22c55e;
+  color: white;
+
+  border-radius: 20px;
+
+  font-size: 0.75rem;
+  font-weight: bold;
+
+  white-space: nowrap;
+}
+
+/* Pricing button */
+.price-btn {
+  display: inline-block;
+
+  padding: 11px 20px;
+
+  background-color: #111827;
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  transition: background-color 0.3s ease;
+}
+
+/* Pricing button hover */
+.price-btn:hover {
+  background-color: #22c55e;
+}
+
+
+/* ==============================
+   9. TESTIMONIALS
+   ============================== */
+
+.testimonial-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Testimonial card */
+.testimonial-card {
+  background-color: white;
+
+  padding: 30px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Testimonial quote */
+.testimonial-card p {
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+/* Member name */
+.testimonial-card h4 {
+  margin-bottom: 3px;
+}
+
+/* Member label */
+.testimonial-card span {
+  color: #22c55e;
+  font-size: 0.9rem;
+}
+
+
+/* ==============================
+   10. FINAL CALL TO ACTION
+   ============================== */
+
+.final-cta {
+  padding: 90px 8%;
+
+  text-align: center;
+
+  background-color: #22c55e;
+  color: white;
+}
+
+/* CTA heading */
+.final-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+/* CTA paragraph */
+.final-cta p {
+  margin-bottom: 25px;
+}
+
+/* CTA button inside green section */
+.final-cta .cta-btn {
+  background-color: #111827;
+}
+
+/* Hover */
+.final-cta .cta-btn:hover {
+  background-color: #1f2937;
+}
+
+
+/* ==============================
+   11. FOOTER
+   ============================== */
+
+.footer {
+  background-color: #111827;
+  color: white;
+}
+
+/* Footer columns */
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  padding: 60px 8%;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+/* Footer headings */
+.footer h3,
+.footer h4 {
+  margin-bottom: 15px;
+}
+
+/* Footer logo */
+.footer-about h3 {
+  color: #22c55e;
+  font-size: 1.6rem;
+}
+
+/* Footer paragraphs */
+.footer p {
+  color: #9ca3af;
+}
+
+/* Footer links */
+.footer a {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #d1d5db;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+/* Footer link hover */
+.footer a:hover {
+  color: #22c55e;
+}
+
+/* Bottom footer */
+.footer-bottom {
+  padding: 20px;
+
+  text-align: center;
+
+  border-top: 1px solid #374151;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+}
+
+
+/* ==============================
+   12. TABLET RESPONSIVENESS
+   ============================== */
+
+@media (max-width: 900px) {
+
+  /* Make feature cards 2 columns */
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Make program cards 2 columns */
+  .program-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Make pricing cards 1 column */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Testimonials become 1 column */
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* About becomes one column */
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer becomes 2 columns */
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ==============================
+   13. MOBILE RESPONSIVENESS
+   ============================== */
+
+@media (max-width: 600px) {
+
+  /* Navbar becomes easier to fit on small screens */
+  .navbar {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 5%;
+  }
+
+  /* Smaller navigation gap */
+  .nav-links {
+    gap: 15px;
+  }
+
+  /* Hide nothing; allow navigation to wrap */
+  .nav-btn {
+    padding: 8px 14px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 75vh;
+    padding: 60px 5%;
+  }
+
+  /* Smaller hero heading */
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Sections */
+  .features,
+  .programs,
+  .about,
+  .pricing,
+  .testimonials {
+    padding: 60px 5%;
+  }
+
+  /* Section headings */
+  .features h2,
+  .programs h2,
+  .about h2,
+  .pricing h2,
+  .testimonials h2 {
+    font-size: 2rem;
+  }
+
+  /* Feature cards become one column */
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Program cards become one column */
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* About statistics */
+  .about-box {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Footer becomes one column */
+  .footer-container {
+    grid-template-columns: 1fr;
+    padding: 50px 5%;
+  }
+
+  /* Final CTA heading */
+  .final-cta h2 {
+    font-size: 2rem;
+  }
+}
